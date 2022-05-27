@@ -1,5 +1,5 @@
 import { createContext, useReducer } from "react";
-import { v4 as uuidv4 } from 'uuid'
+
 import { StateRemovePointer } from "../utils/StateRemovePointer";
 
 function markerReducer(state, action) {
@@ -11,10 +11,8 @@ function markerReducer(state, action) {
 
 
         case "remove":
-            return state.map((element) => {
-                let id = element.id
-                return StateRemovePointer(state, id)
-            })
+            return StateRemovePointer(state)
+          
 
         case "removeAll":
             return []

@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css';
 import Header from './components/header/Header';
-import MenuInferior from './components/MenuInferior';
+import MenuInferior from './components/menuinferior/MenuInferior';
 
 import { MarkContextProvider } from './context/MarkContext';
 import MapPage from './pages/MapPage';
@@ -12,7 +12,6 @@ function App() {
       <Header />
       <MarkContextProvider>
         <MapPage />
-        <MenuInferior />
       </MarkContextProvider>
       
     </div>

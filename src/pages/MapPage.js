@@ -1,16 +1,17 @@
 import { GoogleMap, useJsApiLoader, Marker, Polygon } from '@react-google-maps/api';
 import './MapPage.css'
 import data from '../data/db.json'
-import { useContext, useReducer } from 'react';
+import { useContext } from 'react';
 import { MarkContext } from '../context/MarkContext';
-import Pointer from '../components/Pointer';
-import MenuInferior from '../components/MenuInferior';
+import Pointer from '../components/pointer/Pointer';
+import MenuInferior from '../components/menuinferior/MenuInferior';
+import MenuSuperior from '../components/menusuperior/MenuSuperior';
 
 const MapPage = () => {
 
     const { state, dispatch } = useContext(MarkContext)
     
-    const options ={controls: [], disableDefaultUI: true, mapTypeId: "satellite", zoomControl: true }
+    const options = {controls: [], disableDefaultUI: true, mapTypeId: "satellite", zoomControl: false}
 
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
@@ -44,6 +45,7 @@ const MapPage = () => {
   }
 
   return (
+    
     <div className='map'>
         {isLoaded ? (
         
@@ -55,6 +57,7 @@ const MapPage = () => {
             // onLoad={onLoad}
             // onUnmount={onUnmount}
         >
+        
             { /* Child components, such as markers, info windows, etc. */ }
             {/* <Marker position={position}  options={{
                 label: {
@@ -70,11 +73,11 @@ const MapPage = () => {
             />
             <Pointer />
             <MenuInferior />
-            
+            <MenuSuperior />
         </GoogleMap>
         
   ) : <></>}
-
+    
     </div>
   )
 }

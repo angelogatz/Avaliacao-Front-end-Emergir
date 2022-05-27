@@ -1,5 +1,6 @@
 .map{
     height: 100vh;
+    z-index: 100;
 }
 
 .map-marker{

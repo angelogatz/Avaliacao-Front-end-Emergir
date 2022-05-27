@@ -1,6 +1,6 @@
-export function StateRemovePointer(state, id){
+export function StateRemovePointer(state){
     const removePointer = state.filter((element) => 
-        element.id !== id
+        element.draggable !== true
     )
     return removePointer
 }
