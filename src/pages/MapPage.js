@@ -27,14 +27,6 @@ const MapPage = () => {
         lat: -15.18,
         lng: -53.5845
       }
-      
-
-    const handleClick = (e) => {
-        // console.log(e)
-        const lat = e.latLng.lat()
-        const lng = e.latLng.lng()
-        dispatch({type: "add", payload: {lat: lat, lng: lng}})
-    }
 
     const polygonOp = {
       fillColor: "rgba(255, 255, 255, 0.326)",
@@ -69,7 +61,6 @@ const MapPage = () => {
             <Polygon 
                 paths={coordinates}
                 options={polygonOp} 
-                onClick={handleClick}
             />
             <Pointer />
             <MenuInferior />

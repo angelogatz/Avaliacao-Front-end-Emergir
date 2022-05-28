@@ -72,7 +72,7 @@ const MenuInferior = () => {
 
       <div className="modal">
           <div className="modal-container">
-              <div className="modal-top"> <i onClick={handleCancel} class="uil uil-times"></i></div>
+              <div className="modal-top"> <i onClick={handleCancel} className="uil uil-times"></i></div>
               <div className="modal-middle">
                 <div className="modal-link-1">
                   <h1 className="h1-remove">Excluir pontos selecionados?</h1>
@@ -85,9 +85,9 @@ const MenuInferior = () => {
               </div>
               <div className="modal-bottom">
 
-                <button className="btn-modal btn-remove-all btn-delete-danger" onClick={handleModalRemoveAll}><i class="uil uil-trash-alt"></i> Excluir todos </button>
+                <button className="btn-modal btn-remove-all btn-delete-danger" onClick={handleModalRemoveAll}><i className="uil uil-trash-alt"></i> Excluir todos </button>
 
-                <button className="btn-modal btn-remove btn-delete-danger" onClick={handleModalRemove} ><i class="uil uil-trash-alt"></i> Excluir </button>
+                <button className="btn-modal btn-remove btn-delete-danger" onClick={handleModalRemove} ><i className="uil uil-trash-alt"></i> Excluir </button>
 
                 <button className="btn-modal" onClick={handleCancel}>Cancelar</button>
 
