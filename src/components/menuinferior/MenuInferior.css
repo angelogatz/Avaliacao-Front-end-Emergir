@@ -48,12 +48,24 @@ img{
 
 .modal{
     position: relative;
-    margin-top: -650px;
+    margin-top: -816px;
     display: none;
     width: 100%;
     height: 110vh;
     background-color: rgba(0, 0, 0, 0.65);
     z-index: 1000;
+}
+
+@media (max-height: 720px){
+    .modal{
+        margin-top: -693px;
+    }
+}
+
+@media (max-width: 670px){
+    .modal{
+        margin-top: -700px;
+    }
 }
 
 .modal-container{
