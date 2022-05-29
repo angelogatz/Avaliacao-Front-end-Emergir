@@ -25,8 +25,8 @@ const PinList = () => {
                         (pin.date).getDate() + "/" +  
                         ((pin.date).getMonth() < 10 ? "0" + (pin.date).getMonth() : (pin.date).getMonth()) + "/" + 
                         (pin.date).getFullYear() + " - " + 
-                        (pin.date).getHours() + ":" + 
-                        (pin.date).getMinutes()} </p> 
+                        ((pin.date).getHours() < 10 ? "0" + (pin.date).getHours() : (pin.date).getHours()) + ":" + 
+                        ((pin.date).getMinutes() < 10 ? "0" + (pin.date).getMinutes() : (pin.date).getMinutes())} </p> 
                     </div>
                 }
             </div>

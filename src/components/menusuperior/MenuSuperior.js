@@ -22,7 +22,7 @@ const MenuSuperior = () => {
             <div className="menu-sup">
                 <div className='menu-sup-container'>
                     <div className="menu-top"><h2>Listagem de pontos</h2></div>
-                    {state.length > 0 ? (<PinList />) : (<p style={{padding: "9px", fontFamily: 'Inter', textAlign: 'center', width: '80%', margin: "0 auto", marginTop: '22px'}}>Sem pontos de monitoramento para exibir no momento</p>)}
+                    {state.length > 0 ? (<PinList />) : (<p style={{padding: "9px", fontFamily: 'Inter', textAlign: 'center', width: '80%', margin: "0 auto", marginTop: '2px', fontSize: "14px"}}>Sem pontos de monitoramento para exibir no momento</p>)}
                 </div>
             </div>
         
