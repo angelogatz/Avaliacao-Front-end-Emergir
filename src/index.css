@@ -1,7 +1,6 @@
 body {
   margin: 0;
   padding: 0;
-  
 }
 
 code {
@@ -16,6 +15,6 @@ code {
 
 ::-webkit-scrollbar-thumb{
   background-color: #abcc59;
-  border-radius: 5px;
+  border-radius: 4px;
 }
 

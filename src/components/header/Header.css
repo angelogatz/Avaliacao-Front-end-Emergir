@@ -3,7 +3,7 @@ header{
     height: 64px;
     background-color: #fff;
     box-shadow: 0px 3px 12px rgba(12, 16, 21, 0.24);
-    z-index: 100;
+    z-index: 700;
     position: absolute;
 }
 
