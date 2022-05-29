@@ -48,7 +48,7 @@ img{
 
 .modal{
     position: relative;
-    margin-top: -816px;
+    margin-top: -886px;
     display: none;
     width: 100%;
     height: 110vh;
@@ -56,15 +56,17 @@ img{
     z-index: 1000;
 }
 
-@media (max-height: 720px){
+@media (max-height: 765px){
     .modal{
-        margin-top: -693px;
+        margin-top: -753px;
+        height: 130vh;
     }
 }
 
 @media (max-width: 670px){
     .modal{
         margin-top: -830px;
+        height: 130vh;
     }
 }
 
