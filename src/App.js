@@ -1,20 +1,13 @@
 import React from 'react'
 import './App.css';
-import Header from './components/header/Header';
-import MenuInferior from './components/menuinferior/MenuInferior';
-
 import { MarkContextProvider } from './context/MarkContext';
 import MapPage from './pages/MapPage';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <MarkContextProvider>
-        <MapPage />
-      </MarkContextProvider>
-      
-    </div>
+    <MarkContextProvider>
+      <MapPage />
+    </MarkContextProvider>
   );
 }
 

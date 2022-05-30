@@ -1,5 +1,4 @@
 import { createContext, useReducer } from "react";
-
 import { StateRemovePointer } from "../utils/StateRemovePointer";
 
 function markerReducer(state, action) {
@@ -39,8 +38,6 @@ let initial = []
 export const MarkContextProvider = ({children}) =>{
 
     const [state, dispatch] = useReducer(markerReducer, initial)
-
-    // console.log(state)
 
     return (
         <MarkContext.Provider value={{ state, dispatch}}>
