@@ -1,37 +1,37 @@
 .menu-sup{
-    width: 300px;
-    height: 200px;
+    width: 365px;
+    height: 245px;
     display: flex;
     margin: 0 25px auto;
     flex-direction: column;
-    bottom: 600px;
+    margin-top: 50px;
     text-align: center;
     text-align: left;
-    position: sticky;
-    margin-top: 60px;
+    position: relative;
+    
 }
 
 .menu-sup-container{
     background-color: white;
-    padding: 19px 0;
-    max-width: 300px;
-    border-radius: 8px;
-    margin-top: 30px;
-    overflow-y: scroll;
+    padding: 12px 0;
+    max-width: 365px;
+    border-radius: 0px 0px 8px 8px;
+    margin-top: -10px;
     overflow-x: hidden;
     z-index: 3;
+    box-shadow: -15px 20px 120px 20px rgba(0, 0, 0, 0.57);
 }
 
 .menu-top{
     display: flex;
-    border-top-left-radius: 8px;
     background-color: rgb(51, 51, 51);
+    border-radius: 4px 4px 0px 0px;
     height: 25px;
     width: auto;
     position: relative;
     color: white;
     justify-content: flex-start;
-    margin-top: -22px;
+    margin-top: 40px;
     margin-bottom: 8px;
     font-family: 'Inter';
     padding: 4px;
@@ -46,10 +46,8 @@
 .menu-bottom{
     position: relative;
     width: 100%;
-    margin: 0 100px;
-    margin-left: 0;
-    margin-top: 0;
     font-family: 'Inter';
+    cursor: pointer;
 }
 
 .menu-ativo{
@@ -60,6 +58,7 @@
     margin-top: 0;
     font-family: 'Inter';
     background-color: rgb(230, 230, 230);
+    cursor: pointer;
 }
 
 .menu-bottom span{

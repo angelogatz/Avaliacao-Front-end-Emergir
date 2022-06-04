@@ -1,13 +1,16 @@
 import React from 'react'
 import './App.css';
-import { MarkContextProvider } from './context/MarkContext';
+import { MarkerContextProvider } from './context/markerContext';
+import { ModalContextProvider } from './context/modalContext';
 import MapPage from './pages/MapPage';
 
 function App() {
   return (
-    <MarkContextProvider>
-      <MapPage />
-    </MarkContextProvider>
+    <MarkerContextProvider>
+      <ModalContextProvider>
+        <MapPage />
+      </ModalContextProvider>
+    </MarkerContextProvider>
   );
 }
 

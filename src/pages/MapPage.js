@@ -1,38 +1,61 @@
 import { GoogleMap, useJsApiLoader, Polygon } from '@react-google-maps/api';
 import './MapPage.css'
-import data from '../data/db.json'
-import Pointer from '../components/pointer/Pointer';
-import MenuInferior from '../components/menuinferior/MenuInferior';
-import MenuSuperior from '../components/menusuperior/MenuSuperior';
-import Header from '../components/header/Header'
-import Loading from '../components/loading/Loading';
+import geoJson from '../data/geoJson.json'
+import Pointer from '../components/Pointer/Pointer';
+import MenuInferior from '../components/Menuinferior/MenuInferior';
+import MenuSuperior from '../components/Menusuperior/MenuSuperior';
+import Header from '../components/Header/Header'
+import { API_KEY } from '../API_KEY';
+import Modal from '../components/Modal/Modal';
+import { useContext } from 'react';
+import { MarkerContext } from '../context/markerContext';
+// import Loading from '../components/loading/Loading';
+
+const MAP_COORDINATES = 
+  geoJson
+  .features[0]
+  .geometry
+  .coordinates[0]
+  .map((coord) => ({
+    lat: coord[1],
+    lng: coord[0]
+}))
+
+const MAP_CENTER_POSITION = {
+  lat: -15.18,
+  lng: -53.5845
+}
+
+const MAP_OPTIONS = {
+  controls: [],
+  disableDefaultUI: true,
+  mapTypeId: "satellite",
+  zoomControl: false,
+}
+
+const POLYGON_OPTIONS = {
+  fillColor: "rgba(255, 255, 255, 0.326)",
+  fillOpacity: 0.4,
+  strokeColor: "white",
+  strokeOpacity: 0.8,
+  geodesic: true,
+}
+
 
 const MapPage = () => {
-    
-  const options = {controls: [], disableDefaultUI: true, mapTypeId: "satellite", zoomControl: false}
+
+  const { state, dispatch } = useContext(MarkerContext)
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: "AIzaSyC3KCrCzoO1A-suKY2L_sPFMWSRRQwWc4I"
+    googleMapsApiKey: API_KEY
   })
 
-  const coordinates = data.features[0].geometry.coordinates[0].map((coord) => (
-    {lat: coord[1],
-      lng: coord[0]}
-  ))
-
-  const position = {
-    lat: -15.18,
-    lng: -53.5845
+  const handleRemoveDraggable = (id) => {
+    dispatch({type: "REMOVE_DRAGGABLE", payload: id})
   }
 
-  const polygonOp = {
-    fillColor: "rgba(255, 255, 255, 0.326)",
-    fillOpacity: 0.4,
-    strokeColor: "white",
-    strokeOpacity: 0.8,
-    geodesic: true,
-  }
+  const pinId = state.map(pin => pin.id)
 
   return (
     <>{ 
@@ -42,18 +65,21 @@ const MapPage = () => {
         isLoaded ?
         (<GoogleMap
             mapContainerStyle={{width:'100%', height: '100%'}}
-            center={position}
+            center={MAP_CENTER_POSITION}
             zoom={15}
-            options={options}
+            options={MAP_OPTIONS}
+            onClick={() => handleRemoveDraggable(pinId)}
         >
           <Polygon 
-            paths={coordinates}
-            options={polygonOp} 
+            paths={MAP_COORDINATES}
+            options={POLYGON_OPTIONS}
+            onClick={() => handleRemoveDraggable(pinId)}
           />   
-          <Pointer />
           <Header />
-          <MenuInferior />
+          <Modal />
+          <Pointer />
           <MenuSuperior />
+          <MenuInferior />
         </GoogleMap>
         
   ) : <></>}
