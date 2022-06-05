@@ -9,7 +9,7 @@ import { API_KEY } from '../API_KEY';
 import Modal from '../components/Modal/Modal';
 import { useContext } from 'react';
 import { MarkerContext } from '../context/markerContext';
-// import Loading from '../components/loading/Loading';
+import Loading from '../components/Loading/Loading';
 
 const MAP_COORDINATES = 
   geoJson
@@ -60,8 +60,8 @@ const MapPage = () => {
   return (
     <>{ 
     <div className='map'>
-        {// !isLoaded ?
-        // <Loading /> :
+        {!isLoaded ?
+        <Loading /> :
         isLoaded ?
         (<GoogleMap
             mapContainerStyle={{width:'100%', height: '100%'}}
